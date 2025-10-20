@@ -74,7 +74,7 @@ export default function App() {
         <>
           <header className='mb-6'>
             <h1 className='text-2xl font-semibold tracking-tight'>
-              Carb/hour Calculator
+              Carbs/hour Calculator
             </h1>
             <p className='muted mt-1'>
               Въведи общо време и желани въглехидрати на час. Показва общо
