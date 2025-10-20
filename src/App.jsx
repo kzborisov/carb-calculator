@@ -85,20 +85,19 @@ export default function App() {
           <section className='card p-4 mb-6'>
             <div className='grid grid-cols-1 gap-4 sm:grid-cols-3'>
               <div>
-                <label className='label'>Време (HH:MM:SS)</label>
-                <input
-                  className='input'
-                  type='text'
-                  inputMode='numeric'
-                  placeholder='hh:mm:ss'
-                  value={duration}
-                  onChange={(e) => setDuration(e.target.value)}
-                  aria-label='Време'
-                />
-                <p className='mt-1 text-xs muted'>
-                  Пример: 02:45:00 (приема и 45:00 като MM:SS)
-                </p>
-              </div>
+  <label className="label">Време (HH:MM:SS)</label>
+  <input
+    className="input"
+    type="text"             // 👈 само това сменяме
+    placeholder="hh:mm:ss"
+    value={duration}
+    onChange={(e) => setDuration(e.target.value)}
+    aria-label="Въведи време"
+  />
+  <p className="mt-1 text-xs muted">
+    Пример: 02:45:00 (приема и 45:00 като MM:SS)
+  </p>
+</div>
 
               <div>
                 <label className='label'>Въглехидрати / час (g)</label>
