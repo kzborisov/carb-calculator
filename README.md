@@ -1,17 +1,93 @@
-# React + Vite
+# Carb Calculator & Race Planner
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+A minimalist React + Vite + TailwindCSS single-page app for endurance athletes to plan carbohydrate intake during training or racing.
 
-Currently, two official plugins are available:
+## Features
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Carb/hour Calculator
 
-## React Compiler
+- Enter total duration and target carbs per hour
+- Instantly calculates total carbs needed
+- Displays per-hour breakdown, including the final partial hour
+- Simple, clean, and fast interface
+- Export breakdown as .csv
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Race Day Planner
 
-## Expanding the ESLint configuration
+- Choose between Half Marathon, Marathon, Olympic, 70.3, Ironman
+- Enter expected pace/speed for each segment and target g/hour
+- Automatically calculates duration and total carbs for each discipline
+- Provides full interval breakdown and timing suggestions
+- Optional micro-interval timing (e.g., every 10–30 minutes)
+- CSV export for both breakdown and timing plan
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
-# carb-calculator
+---
+
+## Tech Stack
+
+- React 18
+- Vite
+- TailwindCSS
+- Fully client-side (no backend)
+- Responsive layout and dark mode–ready
+
+---
+
+## Setup & Development
+
+1. Clone the repository
+   git clone [https://github.com/yourusername/carb-calculator.git](https://github.com/yourusername/carb-calculator.git)
+   cd carb-calculator
+
+2. Install dependencies
+   npm install
+
+3. Run the development server
+   npm run dev
+
+Then open [http://localhost:5173](http://localhost:5173) in your browser.
+
+---
+
+## Build
+
+npm run build
+
+Production files will be generated in the dist/ folder.
+
+---
+
+## Folder Structure
+
+src/
+├─ components/
+│ ├─ BreakdownTable.jsx
+│ ├─ IntakeSchedule.jsx
+│ └─ RacePlanner.jsx
+├─ utils/
+│ └─ time.js
+├─ App.jsx
+├─ index.css
+└─ main.jsx
+
+---
+
+## Notes
+
+- All calculations are linear (total carbs = duration × g/hour ÷ 3600).
+- Units are simplified (grams only — no product library).
+- Designed for quick planning before training or race day.
+
+---
+
+## Future Ideas
+
+- Save/load templates locally
+- Hydration & electrolyte planner
+- Race checklist export
+- Mobile-friendly live timer for training sessions
+
+---
+
+Author: Kristian Borisov
+Built for endurance athletes and triathletes planning their fuel strategy.
