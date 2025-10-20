@@ -437,35 +437,39 @@ export default function RacePlanner() {
       </section>
 
       <section className='card p-4'>
-        <div className='grid grid-cols-2 gap-4 sm:grid-cols-4'>
-          <div>
-            <div className='muted text-xs'>Общо време</div>
-            <div className='text-lg font-medium'>
-              {secondsToHMS(plan.totalTimeSec)}
+        <div className='flex flex-col items-between justify-center'>
+          <div className='grid grid-cols-3 gap-4'>
+            <div className='flex flex-col items-center justify-center'>
+              <div className='muted text-xs'>Общо време</div>
+              <div className='text-lg font-medium'>
+                {secondsToHMS(plan.totalTimeSec)}
+              </div>
             </div>
-          </div>
-          <div>
-            <div className='muted text-xs'>Сегменти</div>
-            <div className='text-lg font-medium'>{rows.length}</div>
-          </div>
-          <div>
-            <div className='muted text-xs'>Общо въглехидрати</div>
-            <div className='text-lg font-semibold'>{plan.totalGrams} g</div>
-          </div>
-          <div>
-            <div className='muted text-xs'>&nbsp;</div>
-            <div className='flex gap-2'>
-              <button className='btn' onClick={exportBreakdownCSV}>
-                Експорт CSV (разбивка)
-              </button>
-              <button
-                className='btn'
-                onClick={exportTimingCSV}
-                disabled={!timingEnabled}
-              >
-                Експорт CSV (тайминг)
-              </button>
+            <div className='flex flex-col items-center justify-center'>
+              <div className='muted text-xs'>Сегменти</div>
+              <div className='text-lg font-medium'>{rows.length}</div>
             </div>
+            <div className='flex flex-col items-center justify-center'>
+              <div className='muted text-xs'>Общо въглехидрати</div>
+              <div className='text-lg font-semibold'>{plan.totalGrams} g</div>
+            </div>
+            <div></div>
+          </div>
+          <div className='muted text-xs'>&nbsp;</div>
+          <div className='mt-4 flex flex-col sm:flex-row gap-2 items-center justify-center'>
+            <button
+              className='btn btn-primary btn-block'
+              onClick={exportBreakdownCSV}
+            >
+              Експорт CSV (разбивка)
+            </button>
+            <button
+              className='btn btn-block'
+              onClick={exportTimingCSV}
+              disabled={!timingEnabled}
+            >
+              Експорт CSV (тайминг)
+            </button>
           </div>
         </div>
       </section>

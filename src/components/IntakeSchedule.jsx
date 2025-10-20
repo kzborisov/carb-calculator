@@ -22,33 +22,41 @@ export default function IntakeSchedule({
     );
   }
   return (
-    <div className='table-wrap'>
-      <table className='min-w-full text-sm'>
-        <thead className='table-head'>
-          <tr>
-            <th className='px-4 py-2 text-left'>Време</th>
-            <th className='px-4 py-2 text-left'>Интервал</th>
-            <th className='px-4 py-2 text-right'>Въглехидрати (g)</th>
-            <th className='px-4 py-2 text-right'>Единици</th>
-          </tr>
-        </thead>
-        <tbody>
-          {items.map((it, idx) => (
-            <tr key={idx} className='table-row'>
-              <td className='px-4 py-2 font-medium'>{sToHMS(it.atSec)}</td>
-              <td className='px-4 py-2'>{it.label}</td>
-              <td className='px-4 py-2 text-right'>
-                {(it.grams || 0).toFixed(precision)}
-              </td>
-              <td className='px-4 py-2 text-right'>
-                {it.units
-                  ? `${it.units} ${unitLabel}${it.units === 1 ? "" : "а"}`
-                  : "—"}
-              </td>
+    <div className='table-scroll'>
+      <div className='table-wrap min-w-[560px]'>
+        <table className='min-w-full text-sm'>
+          <thead className='table-head'>
+            <tr>
+              <th className='table-cell text-left whitespace-nowrap'>Време</th>
+              <th className='table-cell text-left'>Интервал</th>
+              <th className='table-cell text-right whitespace-nowrap'>
+                Въглехидрати (g)
+              </th>
+              <th className='table-cell text-right whitespace-nowrap'>
+                Единици
+              </th>
             </tr>
-          ))}
-        </tbody>
-      </table>
+          </thead>
+          <tbody>
+            {items.map((it, idx) => (
+              <tr key={idx} className='table-row'>
+                <td className='table-cell font-medium whitespace-nowrap'>
+                  {sToHMS(it.atSec)}
+                </td>
+                <td className='table-cell break-words'>{it.label}</td>
+                <td className='table-cell text-right whitespace-nowrap'>
+                  {(it.grams || 0).toFixed(precision)}
+                </td>
+                <td className='table-cell text-right whitespace-nowrap'>
+                  {it.units
+                    ? `${it.units} ${unitLabel}${it.units === 1 ? "" : "а"}`
+                    : "—"}
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
     </div>
   );
 }

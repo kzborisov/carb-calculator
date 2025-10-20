@@ -140,7 +140,10 @@ export default function App() {
               </div>
 
               <div className='flex items-end'>
-                <button className='btn btn-primary w-full' onClick={exportCSV}>
+                <button
+                  className='btn btn-primary w-full btn-block'
+                  onClick={exportCSV}
+                >
                   Експорт CSV
                 </button>
               </div>
